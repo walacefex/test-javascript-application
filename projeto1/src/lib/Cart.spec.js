@@ -7,6 +7,11 @@ describe('Card', () => {
     price: 35388,
   };
 
+  let product2 = {
+    title: 'Adidas running shoes - women',
+    price: 41872,
+  };
+
   beforeEach(() => {
     cart = new Cart();
   });
@@ -36,5 +41,20 @@ describe('Card', () => {
     });
 
     expect(cart.getTotal()).toEqual(35388);
+  });
+
+  it('should update total when a product gets included and then remove', () => {
+    cart.add({
+      product,
+      quantity: 2,
+    });
+    cart.add({
+      product: product2,
+      quantity: 1,
+    });
+
+    cart.remove(product); // remove first product
+
+    expect(cart.getTotal()).toEqual(41872);
   });
 });
