@@ -19,4 +19,10 @@ export default class Cart {
       return acc + item.quantity * item.product.price;
     }, 0);
   }
+  checkout(product) {
+    return {
+      total: this.getTotal(),
+      items: this.items,
+    };
+  }
 }
