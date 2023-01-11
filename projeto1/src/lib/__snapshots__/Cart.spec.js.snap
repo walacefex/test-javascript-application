@@ -21,3 +21,25 @@ exports[`Card checkout should return an object with the total and the list of it
   "total": 154520,
 }
 `;
+
+exports[`Card checkout should return an object with the total and the list of items when summary() is called 1`] = `
+{
+  "items": [
+    {
+      "product": {
+        "price": 35388,
+        "title": "Adidas running shoes - men",
+      },
+      "quantity": 2,
+    },
+    {
+      "product": {
+        "price": 41872,
+        "title": "Adidas running shoes - women",
+      },
+      "quantity": 2,
+    },
+  ],
+  "total": 154520,
+}
+`;
