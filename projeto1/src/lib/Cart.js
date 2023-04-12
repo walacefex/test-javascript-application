@@ -10,8 +10,9 @@ const calculatedPercentageDiscount = (amount, item) => {
 }
 
 const calculatedQuantityDiscount = (amount, item) => {
+  const isEven = item.quantity % 2 === 0;
   if(item.condition?.quantity && item.quantity > item.condition.quantity){
-    return amount.percentage(50);
+    return amount.percentage(isEven ? 50 : 40);
   }
   return Money({amount: 0});
 }
